@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +10,21 @@
 <body>
     <main>
         <section>
+              <!-- Search Input -->
+              <input type="text" id="search-input" placeholder="Sök efter kurser...">
             <h1>Kurser</h1>
-            <ul id="course-list">
-                <!-- Course items will be dynamically inserted here -->
-            </ul>
+            <table id="course-table">
+                <thead>
+                    <tr>
+                        <th>Kurskod</th>
+                        <th>Namn</th>
+                        <th>Progression</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- kurser skall läggas in här -->
+                </tbody>
+            </table>
         </section>
     </main>
 </body>

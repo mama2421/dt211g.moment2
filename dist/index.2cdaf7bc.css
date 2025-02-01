@@ -1,20 +1,21 @@
-* {
-  background-color: brown;
+#course-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
 }
 
-#course-list {
-  padding: 0;
-  list-style-type: none;
+#course-table th, #course-table td {
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
 }
 
-.course-item {
+#course-table th {
   background-color: #f9f9f9;
-  justify-content: space-between;
-  display: flex;
+  font-weight: bold;
 }
 
-.course-item div {
-  text-align: center;
-  flex: 1;
+#course-table tbody tr:hover {
+  background-color: #f1f1f1;
 }
 /*# sourceMappingURL=index.2cdaf7bc.css.map */
