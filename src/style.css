@@ -6,6 +6,7 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    padding-bottom: 2em;
 }
 h1{
     font-size: 4em;
@@ -34,8 +35,5 @@ input{
     height: 2em;
 }
 main{ 
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full height of the viewport */
+    left: 30px;
 }
