@@ -1,7 +1,15 @@
+* {
+  font-size: 1.02em;
+}
+
 #course-table {
   border-collapse: collapse;
   width: 100%;
   margin-top: 20px;
+}
+
+h1 {
+  font-size: 4em;
 }
 
 #course-table th, #course-table td {
@@ -11,11 +19,29 @@
 }
 
 #course-table th {
+  cursor: pointer;
   background-color: #f9f9f9;
   font-weight: bold;
 }
 
 #course-table tbody tr:hover {
   background-color: #f1f1f1;
+}
+
+section {
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 30em;
+  height: 2em;
+}
+
+main {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
 }
 /*# sourceMappingURL=index.2cdaf7bc.css.map */

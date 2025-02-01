@@ -599,9 +599,15 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 "use strict";
 const url = "https://webbutveckling.miun.se/files/ramschema_ht24.json";
 let courses = []; // Store all courses globally
+let sortOrder = {
+    code: 1,
+    coursename: 1,
+    progression: 1
+}; // Track sorting order
 window.onload = ()=>{
     loadCourses();
     setupSearch();
+    setupSorting();
 };
 async function loadCourses() {
     try {
@@ -630,14 +636,24 @@ function displayCourses(coursesToDisplay) {
 }
 function setupSearch() {
     const searchInput = document.getElementById("search-input");
-    // Add an event listener to the search input
     searchInput.addEventListener("input", ()=>{
-        const searchTerm = searchInput.value.toLowerCase(); // Get the search term
-        const filteredCourses = courses.filter((course)=>{
-            // Check if the course code, name, or progression matches the search term
-            return course.code.toLowerCase().includes(searchTerm) || course.coursename.toLowerCase().includes(searchTerm) || course.progression.toLowerCase().includes(searchTerm);
+        const searchTerm = searchInput.value.toLowerCase();
+        const filteredCourses = courses.filter((course)=>course.code.toLowerCase().includes(searchTerm) || course.coursename.toLowerCase().includes(searchTerm) || course.progression.toLowerCase().includes(searchTerm));
+        displayCourses(filteredCourses);
+    });
+}
+function setupSorting() {
+    document.querySelectorAll("#course-table th").forEach((th, index)=>{
+        th.addEventListener("click", ()=>{
+            let key = [
+                "code",
+                "coursename",
+                "progression"
+            ][index]; // Determine sorting key
+            sortOrder[key] *= -1; // Toggle sorting order
+            courses.sort((a, b)=>a[key].localeCompare(b[key]) * sortOrder[key]);
+            displayCourses(courses);
         });
-        displayCourses(filteredCourses); // Display the filtered courses
     });
 }
 
