@@ -596,6 +596,21 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"gLLPy":[function(require,module,exports,__globalThis) {
+"use strict";
+let courses = [];
+let url = "https://webbutveckling.miun.se/files/ramschema_ht24.json";
+window.onload = ()=>{
+    loadCourses();
+};
+async function loadCourses() {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        console.table();
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 },{}]},["1Fqy1","gLLPy"], "gLLPy", "parcelRequire94c2")
 
