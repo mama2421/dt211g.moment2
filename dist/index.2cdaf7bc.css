@@ -1,4 +1,20 @@
 * {
   background-color: brown;
 }
+
+#course-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.course-item {
+  background-color: #f9f9f9;
+  justify-content: space-between;
+  display: flex;
+}
+
+.course-item div {
+  text-align: center;
+  flex: 1;
+}
 /*# sourceMappingURL=index.2cdaf7bc.css.map */
